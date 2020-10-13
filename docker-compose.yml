@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  # ports are open for testing only, should be closed for prod
+  elastic:
+    image: elasticsearch:7.9.2
+    container_name: elastic
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+
